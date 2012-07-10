@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Gonzales</title>
+    <style>
+        td, th { border: 1px solid black; text-align: center; }
+        td { text-align: right; padding: 5px; width: 100px; }
+    </style>
+</head>
+<body>
+    <h1>Gonzales</h1>
+    <h2>
+        Menu
+    </h2>
+    <ul>
+        <li>Details</li>
+        <li>Benchmark</li>
+        <li>Results</li>
+    </ul>
+    <noscript><em><b>This page is pretty useless without JavaScript turned on...</b></em></noscript>
+    <h1>Benchmark</h1>
+    <p>
+        Please note that the 8mb benchmark file has not been loaded with the page. This is to reduce bandwidth. It will load once (and hopefully cache ;) when you start running the first test.
+    </p>
+    <p>
+        You can choose to bench a specific parser or to run them all in random order. Note that in the beginning, these have not been optimized for this purpose. I've tried to call them with the minimum overhead possible. Expect improvements in the future, if their authors want to participate of course. Have a parser you want to add? Just let me know.
+    </p>
+    <p>
+        <button id="run">Run</button> <span id="progress"></span> <span id="total"></span>
+    </p>
+    <p>
+        Order: <input type="radio" name="order" id="by-random" checked/> Random <input type="radio" name="order" id="by-source"/> Source <input type="radio" name="order" id="by-parser"/> Parser
+    </p>
+    <p>
+        <table style="border-collapse: collapse; border: 1px solid black;">
+            <thead>
+                <tr class="row-runner"><th colspan="2">Source</th></tr>
+            </thead>
+            <tbody class="sources">
+            </tbody>
+        </table>
+    </p>
+
+    <script src="../src/gonzales.js"></script>
+    <script src="../data/parsers.js"></script>
+    <script src="../data/sources.js"></script>
+    <script>
+        Gonzales.init();
+        document.getElementById('run').onclick = Gonzales.run;
+    </script>
+</body>
+</html>
