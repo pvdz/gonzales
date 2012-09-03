@@ -1,60 +1,72 @@
 <!doctype html>
 <html>
     <head>
-        <title>Gonzales</title>
+      <title>Gonzales</title>
+      <meta charset="utf-8"/>
+      <style>
+        ul { list-style: none; overflow: auto; }
+        li { float: left; margin-right: 15px; }
+      </style>
     </head>
     <body>
-        <h1>Gonzales</h1>
-        <h2>
-            Menu
-        </h2>
-        <ul>
-            <li>Details</li>
-            <li>Benchmark</li>
-            <li>Results</li>
-        </ul>
-        <h1>Details</h1>
-        <h2>
-            Goals
-        </h2>
-        <p>I consider this a mini-competition for one. One without prizes except for the honour, of course. Another reason is that vendors might pick up on this and use this as another benchmark to optimize against. This could only result in a win for us, parser writers... But mainly I'd like to see how fast we can get!</p>
-        <h2>
-            Rules
-        </h2>
-        <p>To be eligable for this project your parser must:</p>
-        <dl>
-            <dt>
-                Have a simple api
-            </dt>
-            <dd>
-                I'd just like to do <code>YourParser.parse(str);</code> or <code>new YourParser.parse(str);</code> and get a string back. The parser would be contained in one or a few files which can be loaded in sequence (no requirejs or anything please). The  The parser should be invocable multiple times in the same session.
-            </dd>
-            <dt>
-                Not cheating on the benchmark
-            </dt>
-            <dd>
-                just adding this as a precaution. No special paths when detecting the benchmark string or anything.
-            </dd>
-            <dt>
-                Finish smaller sources under a minute in Chrome
-            </dt>
-            <dd>
-                let's not waste too much time please :)
-            </dd>
-        </dl>
-        <h2>
-            Parse tree
-        </h2>
-        <p>The reason that there's no parse tree involved is that every parser has it's own goal. I wrote ZeParser initially for Zeon. Zeon required a lot of meta information, which of course can only make the parser slower. At some point somebody boasted that their parser was faster and we ended up in a discussion about that. I concluded that comparing parsers like that was not fair because every parser had a specific purpose for which it had to drop pieces of performance. With this project I'm hoping to level the playing field. No special paths, no special meta information, just parsing.
-        <h2>
-            Platform
-        </h2>
-        <p>I deliberately don't target a specific platform because every platform has different rules. The optimization engines of vendors changes between browser and OS, even hardware. There are no leaderboards although I might add a graph or something jsperf-y, so we can track our progress.</p>
-        <h2>
-            Learning
-        </h2>
-        <p>
-            I hope we can share parsing tricks. There's a million ways of building a parser, none of them is "perfect". I hope we can learn from one another, squeeze more performance out of the parsers as we do. By sharing knowledge on lists like jstools we can only get smarter...
-        </p>
+      <h1>Gonzales</h1>
+      <h2>
+        Menu
+      </h2>
+      <ul>
+        <li><a href=".">Home</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="benchmark.html">Benchmark</a></li>
+      </ul>
+      <h1>Details</h1>
+      <h2>
+        Goals
+      </h2>
+      <p>I consider this a mini-competition for one. One without prizes except for the honour, of course. Another reason is that vendors might pick up on this and use this as another benchmark to optimize against. This could only result in a win for us, parser writers... But mainly I'd like to see how fast we can get!</p>
+      <h2>
+        Rules
+      </h2>
+      <p>First but foremost, use some common sense. Apart from that:</p>
+      <dl>
+        <dt>
+          Have a simple api
+        </dt>
+        <dd>
+          I'd just like to do <code>YourParser.parse(str);</code> or <code>new YourParser.parse(str);</code>. The parser would be contained in one or a few files which can be loaded in sequence (no requirejs or other complicated loaders please). The parser should be invocable multiple times in the same session.
+          <br/><br/>
+        </dd>
+        <dt>
+          Finish smaller sources under a minute in Chrome
+        </dt>
+        <dd>
+          Let's not waste too much time please :)
+        </dd>
+      </dl>
+      <h2>
+        Test suite
+      </h2>
+      <p>
+        I've written <a href="https://github.com/qfox/zeparser2/blob/master/test/tests.js">an exhaustive test suite</a> while (re)writing my own parser. I will (eventually) hook those up to the parsers as well and list the number of failed tests. And for the record, at the time of writing mine fails nine of them :)
+      </p>
+      <h2>
+        Parse tree
+      </h2>
+      <p>The reason that there's no parse tree involved is that every parser has it's own goal. I wrote ZeParser initially for Zeon. Zeon required a lot of meta information, which of course can only make the parser slower. At some point somebody boasted that their parser was faster and we ended up in a discussion about that. I concluded that comparing parsers like that was not fair because every parser had a specific purpose for which it had to drop pieces of performance. With this project I'm hoping to level the playing field. No special paths, no special meta information, just parsing.
+      <h2>
+        Platform
+      </h2>
+      <p>I deliberately don't target a specific platform because every platform has different rules. The optimization engines of vendors changes between browser and OS, even hardware. There are no leaderboards for the same reason.</p>
+      <h2>
+        Learning
+      </h2>
+      <p>
+        I hope we can share parsing tricks. There's a million ways of building a parser, none of them is "perfect". I hope we can learn from one another, squeeze more performance out of the parsers as we do. By sharing knowledge on lists like <a href="https://groups.google.com/forum/?fromgroups#!forum/js-tools">js-tools</a> we can only get smarter...
+      </p>
+      <h2>
+        Joining
+      </h2>
+      <p>
+        If you have a parser that can join and you want on, just ping me through <a href="http://twitter.com/kuvos">twitter</a>. You could also send a <a href="http://github.com/qfox/gonzales">pull request</a>.
+      </p>
     </body>
 </html>
