@@ -19,6 +19,18 @@ Gonzales.parsers = [
       };
     },
   },{
+    name:'Acorn',
+    files: [
+      root+'acorn/acorn.js'
+    ],
+    optimized: false,
+    author: 'Marijn Haverbeke',
+    link: 'https://github.com/marijnh/acorn/',
+    defaultOn: true,
+    getParser: function(exports){
+      return function(x){ console.log(exports.acorn.parse(x)); };
+    }
+  },{
     name:'Esprima',
     files: [
       root+'esprima/esprima.js'
