@@ -55,6 +55,20 @@ Gonzales.parsers = [
       return exports.uglifyjs;
     }
   },{
+    name:'mentaljs',
+    files: [
+        root+'mentaljs/mental.js',
+    ],
+    optimized: false,
+    author: 'Gareth Heyes',
+    link: 'https://code.google.com/p/mentaljs/',
+    defaultOn: true,
+    getParser: function(exports){
+        return function(str){
+		exports.MentalJS.MentalJS().parse({code:str,options:{eval:false, browserCheckSyntax:false}});
+        };
+    }
+  },{
     name: 'ZeParser',
     files: [
       root+'zeparser/Tokenizer.js',
