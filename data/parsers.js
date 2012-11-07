@@ -43,18 +43,6 @@ Gonzales.parsers = [
       return exports.esprima.parse;
     }
   },{
-    name:'UglifyJS',
-    files: [
-      root+'uglifyjs/parse.js'
-    ],
-    optimized: false,
-    author: 'Mihai Bazon',
-    link: 'https://github.com/mishoo/UglifyJS',
-    defaultOn: true,
-    getParser: function(exports){
-      return exports.uglifyjs;
-    }
-  },{
     name:'mentaljs',
     files: [
         root+'mentaljs/mental.js',
@@ -67,6 +55,18 @@ Gonzales.parsers = [
         return function(str){
 		exports.MentalJS.MentalJS().parse({code:str,options:{eval:false, browserCheckSyntax:false}});
         };
+    }
+  },{
+    name:'UglifyJS',
+    files: [
+      root+'uglifyjs/parse.js'
+    ],
+    optimized: false,
+    author: 'Mihai Bazon',
+    link: 'https://github.com/mishoo/UglifyJS',
+    defaultOn: true,
+    getParser: function(exports){
+      return exports.uglifyjs;
     }
   },{
     name: 'ZeParser',
