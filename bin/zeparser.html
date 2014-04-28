@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <title>Gonzales</title>
+  <meta charset="utf-8"/>
+  <style>
+    body { font-size: 12px; }
+    td, th { border: 1px solid black; text-align: center; }
+    td { text-align: right; padding: 5px; width: 100px; }
+    ul { list-style: none; overflow: auto; }
+    li { float: left; margin-right: 15px; }
+    th > a { font-size: 12px; font-face: Verdana; }
+    #top-left { cursor: pointer; }
+
+    tr.on { background-color: rgba(0, 255, 0, 0.05); }
+    tr>td.on { background-color: rgba(0, 255, 0, 0.05); }
+    tr.on>td.on { background-color: rgba(0, 255, 0, 0.3); }
+  </style>
+</head>
+<body>
+  <h1>Gonzales</h1>
+  <h2>
+    Menu
+  </h2>
+  <ul>
+    <li><a href=".">Home</a></li>
+    <li><a href="details.html">Details</a></li>
+    <li><a href="benchmark.html">Benchmark</a></li>
+  </ul>
+  <noscript><em><b>This page is pretty useless without JavaScript turned on...</b></em></noscript>
+  <h1>Benchmark</h1>
+  <p>
+    Please note that the 8mb benchmark file has not been loaded with the page. This is to reduce bandwidth. It will load once (and hopefully cache ;) when you start running the first test.
+  </p>
+  <p>
+    You can choose to bench a specific parser or to run them all in random order. Note that in the beginning, these have not been <b>optimized</b> for this purpose. I've tried to call them with the minimum overhead possible. Expect improvements in the future, if their authors want to participate of course. Have a parser you want to add? Just let me know. Or make a <a href="https://github.com/qfox/gonzales">pull request</a> ;)
+  </p>
+  <p>
+    <button id="run">Run</button> <button id="profile">Run with profiler</button> <span id="progress"></span> <span id="total"></span>
+  </p>
+  <p>
+    Order: <input type="radio" name="order" id="by-random"/> Random <input type="radio" name="order" id="by-source"/> Source <input type="radio" name="order" id="by-parser" checked/> Parser
+  </p>
+  <p>
+    <table style="border-collapse: collapse; border: 1px solid black;">
+      <thead>
+        <tr class="row-runner"><th colspan="2" id="top-left">Source</th></tr>
+      </thead>
+      <tbody class="sources">
+      </tbody>
+    </table>
+    <br/>
+    <footer>
+      Every source is fed to a parser ten times. Each time a small (async) break is taken. The average of these runs are shown (the top number), excluding the highest and lowest numbers. These are shown below. Note that time is measured using <code>setTimeout</code>. I have no scientific background in statistics, so bite me :)
+    </footer>
+  </p>
+
+  <script src="../src/gonzales.js"></script>
+  <script src="../data/sources.js"></script>
+  <script src="../data/zeparser.js"></script>
+  <script>
+    Gonzales.init();
+    document.getElementById('run').onclick = function(){
+      Gonzales.run(false, 5, true, true);
+    };
+    document.getElementById('profile').onclick = function(){
+      Gonzales.run(true);
+    };
+  </script>
+</body>
+</html>
