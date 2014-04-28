@@ -2832,4 +2832,4 @@ Narcissus.parser = (function() {
 }());
 
 
-})(typeof window != 'undefined' ? window : module.exports);
+})(typeof exports === 'object' ? exports : window); // pz: modified this line for gonzales

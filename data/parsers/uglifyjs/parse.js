@@ -1347,4 +1347,4 @@ var warn = function() {};
 
 exports.uglifyjs = parse;
 
-})(typeof window != 'undefined' ? window : module.exports);
+})(typeof exports === 'object' ? exports : window); // pz: modified this line for gonzales

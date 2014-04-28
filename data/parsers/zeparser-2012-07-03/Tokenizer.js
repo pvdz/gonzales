@@ -3163,4 +3163,4 @@ ZeParser.Errors = {
 
 exports.ZeParser = ZeParser;
 
-})(typeof window != 'undefined' ? window : module.exports);
+})(typeof exports != 'undefined' ? exports : window);

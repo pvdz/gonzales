@@ -17,45 +17,45 @@ performAction: function anonymous(yytext,yyleng,yylineno,yy,yystate,$$,_$) {
 
 var $0 = $$.length - 1;
 switch (yystate) {
-case 1: this.$ = yy.Node('ObjectPattern', [], yy.loc([_$[$0-1],_$[$0]])); 
+case 1: this.$ = yy.Node('ObjectPattern', [], yy.loc([_$[$0-1],_$[$0]]));
 break;
-case 2: this.$ = yy.Node('ObjectPattern', $$[$0-1], yy.loc([_$[$0-2],_$[$0]])); 
+case 2: this.$ = yy.Node('ObjectPattern', $$[$0-1], yy.loc([_$[$0-2],_$[$0]]));
 break;
-case 3: this.$ = yy.Node('ObjectPattern', $$[$0-2], yy.loc([_$[$0-3],_$[$0]])); 
+case 3: this.$ = yy.Node('ObjectPattern', $$[$0-2], yy.loc([_$[$0-3],_$[$0]]));
 break;
-case 4: this.$ = yy.Node('ArrayPattern', [], yy.loc([_$[$0-1],_$[$0]])); 
+case 4: this.$ = yy.Node('ArrayPattern', [], yy.loc([_$[$0-1],_$[$0]]));
 break;
-case 5: this.$ = yy.Node('ArrayPattern', [,], yy.loc([_$[$0-2],_$[$0]])); 
+case 5: this.$ = yy.Node('ArrayPattern', [,], yy.loc([_$[$0-2],_$[$0]]));
 break;
-case 6: this.$ = yy.Node('ArrayPattern', $$[$0-1], yy.loc([_$[$0-2],_$[$0]])); 
+case 6: this.$ = yy.Node('ArrayPattern', $$[$0-1], yy.loc([_$[$0-2],_$[$0]]));
 break;
-case 7: this.$ = yy.Node('ArrayPattern', $$[$0-3].concat($$[$0-1]), yy.loc([_$[$0-4],_$[$0]])); 
+case 7: this.$ = yy.Node('ArrayPattern', $$[$0-3].concat($$[$0-1]), yy.loc([_$[$0-4],_$[$0]]));
 break;
-case 8: this.$ = [$$[$0]]; 
+case 8: this.$ = [$$[$0]];
 break;
-case 9: this.$ = $$[$0-1]; this.$.push($$[$0]); 
+case 9: this.$ = $$[$0-1]; this.$.push($$[$0]);
 break;
-case 10: this.$ = $$[$0-3].concat($$[$0-1]); this.$.push($$[$0]); 
+case 10: this.$ = $$[$0-3].concat($$[$0-1]); this.$.push($$[$0]);
 break;
-case 11: this.$ = [$$[$0]]; 
+case 11: this.$ = [$$[$0]];
 break;
-case 12: this.$ = $$[$0-2]; this.$.push($$[$0]); 
+case 12: this.$ = $$[$0-2]; this.$.push($$[$0]);
 break;
-case 13: this.$ = {key:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),value:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),kind: "init"}; 
+case 13: this.$ = {key:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),value:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),kind: "init"};
 break;
-case 14: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"}; 
+case 14: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"};
 break;
-case 16: this.$ = yy.Node('Identifier', $$[$0],yy.loc(_$[$0])) 
+case 16: this.$ = yy.Node('Identifier', $$[$0],yy.loc(_$[$0]))
 break;
-case 49: this.$ = yy.Node('Literal', null, yy.loc(_$[$0])); 
+case 49: this.$ = yy.Node('Literal', null, yy.loc(_$[$0]));
 break;
-case 50: this.$ = yy.Node('Literal', true, yy.loc(_$[$0])); 
+case 50: this.$ = yy.Node('Literal', true, yy.loc(_$[$0]));
 break;
-case 51: this.$ = yy.Node('Literal', false, yy.loc(_$[$0])); 
+case 51: this.$ = yy.Node('Literal', false, yy.loc(_$[$0]));
 break;
-case 52: this.$ = yy.Node('Literal', Number($$[$0]), yy.loc(_$[$0])); 
+case 52: this.$ = yy.Node('Literal', Number($$[$0]), yy.loc(_$[$0]));
 break;
-case 53: this.$ = yy.Node('Literal', yy.escapeString(String($$[$0])), yy.loc(_$[$0])); 
+case 53: this.$ = yy.Node('Literal', yy.escapeString(String($$[$0])), yy.loc(_$[$0]));
 break;
 case 54:
         var body = yytext.slice(1,yytext.lastIndexOf('/'));
@@ -63,271 +63,271 @@ case 54:
         this.$ = yy.Node('Literal', new RegExp(body, flags), yy.loc(yy.locComb(this._$,_$[$0])));
         //this.$ = yy.Node('RegExpExpression', {body:body,flags:flags});
         yy.inRegex = false;
-      
+
 break;
-case 55: yy.inRegex = true; yy.lexer.unput($$[$0]); this.$ = $$[$0]; 
+case 55: yy.inRegex = true; yy.lexer.unput($$[$0]); this.$ = $$[$0];
 break;
-case 56: yy.inRegex = true; yy.lexer.unput($$[$0]); this.$ = $$[$0]; 
+case 56: yy.inRegex = true; yy.lexer.unput($$[$0]); this.$ = $$[$0];
 break;
-case 57: this.$ = {key:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),value:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),kind: "init"}; 
+case 57: this.$ = {key:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),value:yy.Node('Identifier', $$[$0],yy.loc(_$[$0])),kind: "init"};
 break;
-case 58: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"}; 
+case 58: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"};
 break;
-case 59: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"}; 
+case 59: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),value:$$[$0],kind: "init"};
 break;
-case 60: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Literal', String($$[$0-2]),yy.loc(_$[$0-2])),value:$$[$0],kind: "init"}; 
+case 60: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Literal', String($$[$0-2]),yy.loc(_$[$0-2])),value:$$[$0],kind: "init"};
 break;
-case 61: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Literal', Number($$[$0-2]),yy.loc(_$[$0-2])),value:$$[$0],kind: "init"}; 
+case 61: yy.locComb(this._$,_$[$0]);this.$ = {key:yy.Node('Literal', Number($$[$0-2]),yy.loc(_$[$0-2])),value:$$[$0],kind: "init"};
 break;
 case 62:
           if ($$[$0-4] !== 'get' && $$[$0-4] !== 'set') throw new Error('Parse error, invalid set/get.'); // TODO: use jison ABORT when supported
           this._$ = yy.locComb(_$[$0-4],_$[$0]);
           var fun = yy.Node('FunctionExpression',null,[],$$[$0], false, false, yy.loc(this._$));
           this.$ = {key:yy.Node('Identifier', $$[$0-3],yy.loc(_$[$0-3])),value:fun,kind: $$[$0-4]};
-      
+
 break;
 case 63:
           this._$ = yy.locComb(_$[$0-5],_$[$0]);
           if ($$[$0-5] !== 'get' && $$[$0-5] !== 'set') throw new Error('Parse error, invalid set/get.'); // TODO: use jison ABORT when supported
           var fun = yy.Node('FunctionExpression',null,$$[$0-2],$$[$0],false,false,yy.loc(this._$));
           this.$ = {key:yy.Node('Identifier', $$[$0-4],yy.loc(_$[$0-4])),value:fun,kind: $$[$0-5]};
-      
+
 break;
-case 64: this.$ = [$$[$0]]; 
+case 64: this.$ = [$$[$0]];
 break;
-case 65: this.$ = $$[$0-2]; this.$.push($$[$0]); 
+case 65: this.$ = $$[$0-2]; this.$.push($$[$0]);
 break;
-case 67: this.$ = yy.Node('ObjectExpression',[],yy.loc([this._$,_$[$0]])); 
+case 67: this.$ = yy.Node('ObjectExpression',[],yy.loc([this._$,_$[$0]]));
 break;
-case 68: this.$ = yy.Node('ObjectExpression',$$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 68: this.$ = yy.Node('ObjectExpression',$$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
-case 69: this.$ = yy.Node('ObjectExpression',$$[$0-2],yy.loc([this._$,_$[$0]])); 
+case 69: this.$ = yy.Node('ObjectExpression',$$[$0-2],yy.loc([this._$,_$[$0]]));
 break;
-case 70: this.$ = yy.Node('ThisExpression'); 
+case 70: this.$ = yy.Node('ThisExpression');
 break;
-case 73: this.$ = yy.Node('Identifier', String($$[$0]), yy.loc(_$[$0])); 
+case 73: this.$ = yy.Node('Identifier', String($$[$0]), yy.loc(_$[$0]));
 break;
-case 74: this.$ = $$[$0-1]; this.$.parens = true; yy.locComb(this._$,_$[$0]) 
+case 74: this.$ = $$[$0-1]; this.$.parens = true; yy.locComb(this._$,_$[$0])
 break;
-case 75: this.$ = yy.Node('ArrayExpression',[],yy.loc([this._$,_$[$0]])); 
+case 75: this.$ = yy.Node('ArrayExpression',[],yy.loc([this._$,_$[$0]]));
 break;
-case 76: this.$ = yy.Node('ArrayExpression',$$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 76: this.$ = yy.Node('ArrayExpression',$$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
-case 77: this.$ = yy.Node('ArrayExpression',$$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 77: this.$ = yy.Node('ArrayExpression',$$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
 case 78: this.$ = yy.Node('ArrayExpression',$$[$0-3].concat($$[$0-1]),yy.loc([this._$,_$[$0]]));
 break;
-case 79: this.$ = [$$[$0]]; 
+case 79: this.$ = [$$[$0]];
 break;
-case 80: this.$ = $$[$0-1]; this.$.push($$[$0]); 
+case 80: this.$ = $$[$0-1]; this.$.push($$[$0]);
 break;
-case 81: this.$ = $$[$0-3].concat($$[$0-1]); this.$.push($$[$0]); 
+case 81: this.$ = $$[$0-3].concat($$[$0-1]); this.$.push($$[$0]);
 break;
-case 82: this.$ = []; 
+case 82: this.$ = [];
 break;
-case 84: this.$ = [,]; 
+case 84: this.$ = [,];
 break;
-case 85: this.$ = $$[$0-1]; this.$.length = this.$.length+1; 
+case 85: this.$ = $$[$0-1]; this.$.length = this.$.length+1;
 break;
-case 88: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]])); 
+case 88: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]]));
 break;
-case 89: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]])); 
+case 89: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]]));
 break;
-case 90: this.$ = yy.Node('NewExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 90: this.$ = yy.Node('NewExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 92: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]])); 
+case 92: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]]));
 break;
-case 93: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]])); 
+case 93: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]]));
 break;
-case 94: this.$ = yy.Node('NewExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 94: this.$ = yy.Node('NewExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 96: this.$ = yy.Node('NewExpression',$$[$0],[],yy.loc([this._$,_$[$0]])); 
+case 96: this.$ = yy.Node('NewExpression',$$[$0],[],yy.loc([this._$,_$[$0]]));
 break;
-case 98: this.$ = yy.Node('NewExpression',$$[$0],[],yy.loc([this._$,_$[$0]])); 
+case 98: this.$ = yy.Node('NewExpression',$$[$0],[],yy.loc([this._$,_$[$0]]));
 break;
-case 99: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 99: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 100: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 100: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 101: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]])); 
+case 101: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]]));
 break;
-case 102: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]])); 
+case 102: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]]));
 break;
-case 103: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 103: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 104: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 104: this.$ = yy.Node('CallExpression',$$[$0-1],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 105: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]])); 
+case 105: this.$ = yy.Node('MemberExpression',$$[$0-3],$$[$0-1],true,yy.loc([this._$,_$[$0]]));
 break;
-case 106: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]])); 
+case 106: this.$ = yy.Node('MemberExpression',$$[$0-2],yy.Node('Identifier', String($$[$0])),false,yy.loc([this._$,_$[$0]]));
 break;
-case 107: this.$ = []; 
+case 107: this.$ = [];
 break;
-case 108: this.$ = $$[$0-1]; 
+case 108: this.$ = $$[$0-1];
 break;
-case 109: this.$ = [$$[$0]]; 
+case 109: this.$ = [$$[$0]];
 break;
-case 110: this.$ = $$[$0-2]; this.$.push($$[$0]); 
+case 110: this.$ = $$[$0-2]; this.$.push($$[$0]);
 break;
-case 116: this.$ = yy.Node('UpdateExpression','++',$$[$0-1],false,yy.loc([this._$,_$[$0]])); 
+case 116: this.$ = yy.Node('UpdateExpression','++',$$[$0-1],false,yy.loc([this._$,_$[$0]]));
 break;
-case 117: this.$ = yy.Node('UpdateExpression','--',$$[$0-1],false,yy.loc([this._$,_$[$0]])); 
+case 117: this.$ = yy.Node('UpdateExpression','--',$$[$0-1],false,yy.loc([this._$,_$[$0]]));
 break;
-case 119: this.$ = yy.Node('UpdateExpression','++',$$[$0-1],false,yy.loc([this._$,_$[$0]])); 
+case 119: this.$ = yy.Node('UpdateExpression','++',$$[$0-1],false,yy.loc([this._$,_$[$0]]));
 break;
-case 120: this.$ = yy.Node('UpdateExpression','--',$$[$0-1],false,yy.loc([this._$,_$[$0]])); 
+case 120: this.$ = yy.Node('UpdateExpression','--',$$[$0-1],false,yy.loc([this._$,_$[$0]]));
 break;
-case 121: this.$ = yy.Node('UnaryExpression','delete',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 121: this.$ = yy.Node('UnaryExpression','delete',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 122: this.$ = yy.Node('UnaryExpression','void',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 122: this.$ = yy.Node('UnaryExpression','void',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 123: this.$ = yy.Node('UnaryExpression','typeof',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 123: this.$ = yy.Node('UnaryExpression','typeof',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 124: this.$ = yy.Node('UpdateExpression','++',$$[$0],true,yy.loc([this._$,_$[$0]])); 
+case 124: this.$ = yy.Node('UpdateExpression','++',$$[$0],true,yy.loc([this._$,_$[$0]]));
 break;
-case 125: this.$ = yy.Node('UpdateExpression','--',$$[$0],true,yy.loc([this._$,_$[$0]])); 
+case 125: this.$ = yy.Node('UpdateExpression','--',$$[$0],true,yy.loc([this._$,_$[$0]]));
 break;
-case 126: this.$ = yy.Node('UnaryExpression','+',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 126: this.$ = yy.Node('UnaryExpression','+',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 127: this.$ = yy.Node('UnaryExpression','-',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 127: this.$ = yy.Node('UnaryExpression','-',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 128: this.$ = yy.Node('UnaryExpression','~',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 128: this.$ = yy.Node('UnaryExpression','~',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 129: this.$ = yy.Node('UnaryExpression','!',$$[$0],yy.loc([this._$,_$[$0]])); 
+case 129: this.$ = yy.Node('UnaryExpression','!',$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 135: this.$ = yy.Node('BinaryExpression', '*', $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]])); 
+case 135: this.$ = yy.Node('BinaryExpression', '*', $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 136: this.$ = yy.Node('BinaryExpression', '/', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 136: this.$ = yy.Node('BinaryExpression', '/', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 137: this.$ = yy.Node('BinaryExpression', '%', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 137: this.$ = yy.Node('BinaryExpression', '%', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 139: this.$ = yy.Node('BinaryExpression',  '*', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 139: this.$ = yy.Node('BinaryExpression',  '*', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 140: this.$ = yy.Node('BinaryExpression', '/', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 140: this.$ = yy.Node('BinaryExpression', '/', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 141: this.$ = yy.Node('BinaryExpression', '%', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 141: this.$ = yy.Node('BinaryExpression', '%', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 143: this.$ = yy.Node('BinaryExpression', '+', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 143: this.$ = yy.Node('BinaryExpression', '+', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 144: this.$ = yy.Node('BinaryExpression', '-', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 144: this.$ = yy.Node('BinaryExpression', '-', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
 case 146: this._$ = yy.locComb(_$[$0-2],_$[$0]);
-        this.$ = yy.Node('BinaryExpression', '+', $$[$0-2], $$[$0], yy.loc(this._$)); 
+        this.$ = yy.Node('BinaryExpression', '+', $$[$0-2], $$[$0], yy.loc(this._$));
 break;
 case 147: this._$ = yy.locComb(_$[$0-2],_$[$0]);
-        this.$ = yy.Node('BinaryExpression', '-', $$[$0-2], $$[$0], yy.loc(this._$)); 
+        this.$ = yy.Node('BinaryExpression', '-', $$[$0-2], $$[$0], yy.loc(this._$));
 break;
-case 149: this.$ = yy.Node('BinaryExpression', '<<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 149: this.$ = yy.Node('BinaryExpression', '<<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 150: this.$ = yy.Node('BinaryExpression', '>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 150: this.$ = yy.Node('BinaryExpression', '>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 151: this.$ = yy.Node('BinaryExpression', '>>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 151: this.$ = yy.Node('BinaryExpression', '>>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 153: this.$ = yy.Node('BinaryExpression', '<<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 153: this.$ = yy.Node('BinaryExpression', '<<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 154: this.$ = yy.Node('BinaryExpression', '>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 154: this.$ = yy.Node('BinaryExpression', '>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 155: this.$ = yy.Node('BinaryExpression', '>>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 155: this.$ = yy.Node('BinaryExpression', '>>>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 157: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 157: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 158: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 158: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 159: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 159: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 160: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 160: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 161: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 161: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 162: this.$ = yy.Node('BinaryExpression', 'in', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 162: this.$ = yy.Node('BinaryExpression', 'in', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 164: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 164: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 165: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 165: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 166: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 166: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 167: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 167: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 168: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 168: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 170: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 170: this.$ = yy.Node('BinaryExpression', '<', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 171: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 171: this.$ = yy.Node('BinaryExpression', '>', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 172: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 172: this.$ = yy.Node('BinaryExpression', '<=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 173: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 173: this.$ = yy.Node('BinaryExpression', '>=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 174: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 174: this.$ = yy.Node('BinaryExpression', 'instanceof', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 175: this.$ = yy.Node('BinaryExpression', 'in', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 175: this.$ = yy.Node('BinaryExpression', 'in', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 177: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 177: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 178: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 178: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 179: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 179: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 180: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 180: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 182: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 182: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 183: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 183: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 184: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 184: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 185: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 185: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 187: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 187: this.$ = yy.Node('BinaryExpression', '==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 188: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 188: this.$ = yy.Node('BinaryExpression', '!=', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 189: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 189: this.$ = yy.Node('BinaryExpression', '===', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 190: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 190: this.$ = yy.Node('BinaryExpression', '!==', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 192: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 192: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 194: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 194: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 196: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 196: this.$ = yy.Node('BinaryExpression', '&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 198: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 198: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 200: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 200: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 202: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 202: this.$ = yy.Node('BinaryExpression', '^', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 204: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 204: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 206: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 206: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 208: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 208: this.$ = yy.Node('BinaryExpression', '|', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 210: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 210: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 212: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 212: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 214: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 214: this.$ = yy.Node('LogicalExpression', '&&', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 216: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 216: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 218: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 218: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 220: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 220: this.$ = yy.Node('LogicalExpression', '||', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 222: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 222: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 224: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 224: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 226: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 226: this.$ = yy.Node('ConditionalExpression', $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 228: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 228: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 230: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 230: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 232: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 232: this.$ = yy.Node('AssignmentExpression', $$[$0-1], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
 case 246:
         if ($$[$0-2].type == 'SequenceExpression') {
@@ -336,7 +336,7 @@ case 246:
           this.$ = $$[$0-2];
         } else
           this.$ = yy.Node('SequenceExpression',[$$[$0-2], $$[$0]],yy.loc([this._$,_$[$0]]));
-      
+
 break;
 case 248:
         if ($$[$0-2].type == 'SequenceExpression') {
@@ -345,7 +345,7 @@ case 248:
           this.$ = $$[$0-2];
         } else
           this.$ = yy.Node('SequenceExpression',[$$[$0-2], $$[$0]],yy.loc([this._$,_$[$0]]));
-      
+
 break;
 case 250:
         if ($$[$0-2].type == 'SequenceExpression') {
@@ -354,285 +354,285 @@ case 250:
           this.$ = $$[$0-2];
         } else
           this.$ = yy.Node('SequenceExpression',[$$[$0-2], $$[$0]],yy.loc([this._$,_$[$0]]));
-      
+
 break;
-case 267: this.$ = yy.Node('BlockStatement',[],yy.loc([this._$,_$[$0]])); 
+case 267: this.$ = yy.Node('BlockStatement',[],yy.loc([this._$,_$[$0]]));
 break;
-case 268: this.$ = yy.Node('BlockStatement',$$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 268: this.$ = yy.Node('BlockStatement',$$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
-case 269: this.$ = yy.Node('VariableDeclaration',"const",$$[$0-1],yy.loc([this._$,_$[$0]])) 
+case 269: this.$ = yy.Node('VariableDeclaration',"const",$$[$0-1],yy.loc([this._$,_$[$0]]))
 break;
-case 270: this.$ = yy.Node('VariableDeclaration',"const",$$[$0-1],yy.loc([this._$,_$[$0-1]])) 
+case 270: this.$ = yy.Node('VariableDeclaration',"const",$$[$0-1],yy.loc([this._$,_$[$0-1]]))
 break;
-case 271: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 271: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
-case 272: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+case 272: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 273: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 273: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
-case 274: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+case 274: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
-case 275: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+case 275: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 276: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 276: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 277: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 277: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
-case 278: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+case 278: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 279: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 279: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
-case 280: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+case 280: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
-case 281: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+case 281: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 282: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 282: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 283: this.$ = yy.Node('VariableDeclaration',"var",$$[$0-1],yy.loc([this._$,_$[$0]])) 
+case 283: this.$ = yy.Node('VariableDeclaration',"var",$$[$0-1],yy.loc([this._$,_$[$0]]))
 break;
-case 284: this.$ = yy.Node('VariableDeclaration',"var",$$[$0-1],yy.loc([this._$,_$[$0-1]])) 
+case 284: this.$ = yy.Node('VariableDeclaration',"var",$$[$0-1],yy.loc([this._$,_$[$0-1]]))
 break;
-case 285: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 285: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
-case 286: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+case 286: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 287: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 287: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
-case 288: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+case 288: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
-case 289: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+case 289: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 290: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 290: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 291: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 291: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
 case 292: yy.locComb(this._$,_$[$0]);
-        this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+        this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 293: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 293: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
 case 294: yy.locComb(this._$,_$[$0]);
-        this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+        this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
 case 295: yy.locComb(this._$,_$[$0]);
-        this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+        this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 296: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 296: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 297: this.$ = yy.Node('VariableDeclaration',"let",$$[$0-1],yy.loc([this._$,_$[$0]])) 
+case 297: this.$ = yy.Node('VariableDeclaration',"let",$$[$0-1],yy.loc([this._$,_$[$0]]))
 break;
-case 298: this.$ = yy.Node('VariableDeclaration',"let",$$[$0-1],yy.loc([this._$,_$[$0-1]])) 
+case 298: this.$ = yy.Node('VariableDeclaration',"let",$$[$0-1],yy.loc([this._$,_$[$0-1]]))
 break;
-case 299: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 299: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
-case 300: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+case 300: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 301: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 301: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
-case 302: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+case 302: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
-case 303: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+case 303: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 304: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 304: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 305: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)]; 
+case 305: this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)];
 break;
 case 306: yy.locComb(this._$,_$[$0]);
-        this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])]; 
+        this.$ = [yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])];
 break;
-case 307: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])]; 
+case 307: yy.locComb(this._$,_$[$0]);this.$ = [yy.Node('InitPatt', $$[$0-1], $$[$0])];
 break;
 case 308: yy.locComb(this._$,_$[$0]);
-        this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null)); 
+        this.$ = $$[$0-2]; $$[$0-2].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0],yy.loc(_$[$0])), null));
 break;
 case 309: yy.locComb(this._$,_$[$0]);
-        this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0])); 
+        this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), $$[$0]));
 break;
-case 310: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0])); 
+case 310: yy.locComb(this._$,_$[$0]);this.$ = $$[$0-3]; $$[$0-3].push(yy.Node('InitPatt', $$[$0-1], $$[$0]));
 break;
-case 311: this.$ = $$[$0]; yy.locComb(this._$,_$[$0]) 
+case 311: this.$ = $$[$0]; yy.locComb(this._$,_$[$0])
 break;
-case 312: this.$ = $$[$0]; yy.locComb(this._$,_$[$0]) 
+case 312: this.$ = $$[$0]; yy.locComb(this._$,_$[$0])
 break;
-case 313: this.$ = yy.Node('EmptyStatement',yy.loc(_$[$0])); 
+case 313: this.$ = yy.Node('EmptyStatement',yy.loc(_$[$0]));
 break;
-case 314: this.$ = yy.Node('ExpressionStatement', $$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 314: this.$ = yy.Node('ExpressionStatement', $$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
-case 315: this.$ = yy.Node('ExpressionStatement', $$[$0-1],yy.loc(_$[$0-1])); 
+case 315: this.$ = yy.Node('ExpressionStatement', $$[$0-1],yy.loc(_$[$0-1]));
 break;
-case 316: this.$ = yy.Node('IfStatement', $$[$0-2], $$[$0], null, yy.loc([this._$,_$[$0]])); 
+case 316: this.$ = yy.Node('IfStatement', $$[$0-2], $$[$0], null, yy.loc([this._$,_$[$0]]));
 break;
-case 317: this.$ = yy.Node('IfStatement', $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]])); 
+case 317: this.$ = yy.Node('IfStatement', $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 318: this.$ = yy.Node('DoWhileStatement', $$[$0-5], $$[$0-2],yy.loc([this._$,_$[$0]])); 
+case 318: this.$ = yy.Node('DoWhileStatement', $$[$0-5], $$[$0-2],yy.loc([this._$,_$[$0]]));
 break;
-case 319: this.$ = yy.Node('DoWhileStatement', $$[$0-5], $$[$0-2],yy.loc([this._$,_$[$0-1]])); 
+case 319: this.$ = yy.Node('DoWhileStatement', $$[$0-5], $$[$0-2],yy.loc([this._$,_$[$0-1]]));
 break;
-case 320: this.$ = yy.Node('WhileStatement', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 320: this.$ = yy.Node('WhileStatement', $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 321: this.$ = yy.Node('ForStatement', $$[$0-6], $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]])); 
+case 321: this.$ = yy.Node('ForStatement', $$[$0-6], $$[$0-4], $$[$0-2], $$[$0],yy.loc([this._$,_$[$0]]));
 break;
 case 322: this.$ = yy.Node('ForStatement',
                 yy.Node('VariableDeclaration',"var", $$[$0-6], yy.loc([_$[$0-7],_$[$0-6]])),
-                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]])); 
+                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]]));
 break;
 case 323: this.$ = yy.Node('ForStatement',
                 yy.Node('VariableDeclaration',"let", $$[$0-6], yy.loc([_$[$0-7],_$[$0-6]])),
-                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]])); 
+                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]]));
 break;
 case 324: this.$ = yy.Node('ForStatement',
                 yy.Node('VariableDeclaration',"const", $$[$0-6], yy.loc([_$[$0-7],_$[$0-6]])),
-                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]])); 
+                $$[$0-4], $$[$0-2], $$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 325: this.$ = yy.Node('ForInStatement', $$[$0-4], $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]])); 
+case 325: this.$ = yy.Node('ForInStatement', $$[$0-4], $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]]));
 break;
 case 326: this.$ = yy.Node('ForInStatement', $$[$0-3],
-                  $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]])); 
+                  $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]]));
 break;
 case 327: this.$ = yy.Node('ForInStatement', $$[$0-3],
-                  $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]])); 
+                  $$[$0-2], $$[$0], false, yy.loc([this._$,_$[$0]]));
 break;
 case 328: this.$ = yy.Node('VariableDeclaration',"var",
           [yy.Node('InitPatt',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), null)],
-          yy.loc([_$[$0-2],_$[$0-1]])) 
+          yy.loc([_$[$0-2],_$[$0-1]]))
 break;
 case 329: this.$ = yy.Node('VariableDeclaration',"var",
           [yy.Node('InitPatt',$$[$0-1], null)],
-          yy.loc([_$[$0-2],_$[$0-1]])) 
+          yy.loc([_$[$0-2],_$[$0-1]]))
 break;
 case 330: this.$ = yy.Node('VariableDeclaration',"let",
           [yy.Node('InitPatt',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])), null)],
-          yy.loc([_$[$0-2],_$[$0-1]])) 
+          yy.loc([_$[$0-2],_$[$0-1]]))
 break;
 case 331: this.$ = yy.Node('VariableDeclaration',"let",
           [yy.Node('InitPatt',$$[$0-1], null)],
-          yy.loc([_$[$0-2],_$[$0-1]])) 
+          yy.loc([_$[$0-2],_$[$0-1]]))
 break;
 case 332: this.$ = yy.Node('VariableDeclaration',"var",
           [yy.Node('InitPatt',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])), $$[$0-1])],
-          yy.loc([_$[$0-3],_$[$0-1]])) 
+          yy.loc([_$[$0-3],_$[$0-1]]))
 break;
 case 333: this.$ = yy.Node('VariableDeclaration',"var",
           [yy.Node('InitPatt',$$[$0-2], $$[$0-1])],
-          yy.loc([_$[$0-3],_$[$0-1]])) 
+          yy.loc([_$[$0-3],_$[$0-1]]))
 break;
 case 334: this.$ = yy.Node('VariableDeclaration',"let",
           [yy.Node('InitPatt',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])), $$[$0-1])],
-          yy.loc([_$[$0-3],_$[$0-1]])) 
+          yy.loc([_$[$0-3],_$[$0-1]]))
 break;
 case 335: this.$ = yy.Node('VariableDeclaration',"let",
           [yy.Node('InitPatt',$$[$0-2], $$[$0-1])],
-          yy.loc([_$[$0-3],_$[$0-1]])) 
+          yy.loc([_$[$0-3],_$[$0-1]]))
 break;
-case 336: this.$ = null 
+case 336: this.$ = null
 break;
-case 338: this.$ = null 
+case 338: this.$ = null
 break;
-case 340: this.$ = yy.Node('ContinueStatement',null,yy.loc([this._$,_$[$0]])); 
+case 340: this.$ = yy.Node('ContinueStatement',null,yy.loc([this._$,_$[$0]]));
 break;
-case 341: this.$ = yy.Node('ContinueStatement',null,yy.loc(this._$)); 
+case 341: this.$ = yy.Node('ContinueStatement',null,yy.loc(this._$));
 break;
-case 342: this.$ = yy.Node('ContinueStatement',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])),yy.loc([this._$,_$[$0]])); 
+case 342: this.$ = yy.Node('ContinueStatement',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])),yy.loc([this._$,_$[$0]]));
 break;
-case 343: this.$ = yy.Node('ContinueStatement',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])),yy.loc([this._$,_$[$0-1]])); 
+case 343: this.$ = yy.Node('ContinueStatement',yy.Node('Identifier', $$[$0-1],yy.loc(_$[$0-1])),yy.loc([this._$,_$[$0-1]]));
 break;
-case 344: this.$ = yy.Node('BreakStatement',null,yy.loc([this._$,_$[$0]])); 
+case 344: this.$ = yy.Node('BreakStatement',null,yy.loc([this._$,_$[$0]]));
 break;
-case 345: this.$ = yy.Node('BreakStatement',null,yy.loc(this._$)); 
+case 345: this.$ = yy.Node('BreakStatement',null,yy.loc(this._$));
 break;
-case 346: this.$ = yy.Node('BreakStatement',yy.Node('Identifier', $$[$0-1],yy.loc(this._$)),yy.loc([this._$,_$[$0]])); 
+case 346: this.$ = yy.Node('BreakStatement',yy.Node('Identifier', $$[$0-1],yy.loc(this._$)),yy.loc([this._$,_$[$0]]));
 break;
-case 347: this.$ = yy.Node('BreakStatement',yy.Node('Identifier', $$[$0-1],yy.loc(this._$)),yy.loc([this._$,_$[$0-1]])); 
+case 347: this.$ = yy.Node('BreakStatement',yy.Node('Identifier', $$[$0-1],yy.loc(this._$)),yy.loc([this._$,_$[$0-1]]));
 break;
-case 348: this.$ = yy.Node('ReturnStatement',null,yy.loc([this._$,_$[$0]])); 
+case 348: this.$ = yy.Node('ReturnStatement',null,yy.loc([this._$,_$[$0]]));
 break;
-case 349: this.$ = yy.Node('ReturnStatement',null,yy.loc(this._$)); 
+case 349: this.$ = yy.Node('ReturnStatement',null,yy.loc(this._$));
 break;
-case 350: this.$ = yy.Node('ReturnStatement',$$[$0-1],yy.loc([this._$,_$[$0]])); 
+case 350: this.$ = yy.Node('ReturnStatement',$$[$0-1],yy.loc([this._$,_$[$0]]));
 break;
-case 351: this.$ = yy.Node('ReturnStatement',$$[$0-1],yy.loc([this._$,_$[$0-1]])); 
+case 351: this.$ = yy.Node('ReturnStatement',$$[$0-1],yy.loc([this._$,_$[$0-1]]));
 break;
-case 352: this.$ = yy.Node('WithStatement',$$[$0-2],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 352: this.$ = yy.Node('WithStatement',$$[$0-2],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 353: this.$ = yy.Node('SwitchStatement',$$[$0-2],$$[$0],yy.loc([this._$,_$[$0]])); 
+case 353: this.$ = yy.Node('SwitchStatement',$$[$0-2],$$[$0],yy.loc([this._$,_$[$0]]));
 break;
-case 354: this.$ = $$[$0-1]; yy.locComb(this._$,_$[$0]) 
+case 354: this.$ = $$[$0-1]; yy.locComb(this._$,_$[$0])
 break;
-case 355: $$[$0-3].push($$[$0-2]); this.$ = $$[$0-3].concat($$[$0-1]); yy.locComb(this._$,_$[$0]) 
+case 355: $$[$0-3].push($$[$0-2]); this.$ = $$[$0-3].concat($$[$0-1]); yy.locComb(this._$,_$[$0])
 break;
-case 356: this.$ = []; 
+case 356: this.$ = [];
 break;
-case 358: this.$ = [$$[$0]]; 
+case 358: this.$ = [$$[$0]];
 break;
-case 359: $$[$0-1].push($$[$0]); this.$ = $$[$0-1]; 
+case 359: $$[$0-1].push($$[$0]); this.$ = $$[$0-1];
 break;
-case 360: this.$ = yy.Node('SwitchCase',$$[$0-1],[], yy.loc([this._$,_$[$0]])); 
+case 360: this.$ = yy.Node('SwitchCase',$$[$0-1],[], yy.loc([this._$,_$[$0]]));
 break;
-case 361: this.$ = yy.Node('SwitchCase',$$[$0-2],$$[$0], yy.loc([this._$,_$[$0]])); 
+case 361: this.$ = yy.Node('SwitchCase',$$[$0-2],$$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 362: this.$ = yy.Node('SwitchCase',null,[], yy.loc([this._$,_$[$0]])); 
+case 362: this.$ = yy.Node('SwitchCase',null,[], yy.loc([this._$,_$[$0]]));
 break;
-case 363: this.$ = yy.Node('SwitchCase',null,$$[$0], yy.loc([this._$,_$[$0]])); 
+case 363: this.$ = yy.Node('SwitchCase',null,$$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 364: this.$ = yy.Node('LabeledStatement',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),$$[$0], yy.loc([this._$,_$[$0]])); 
+case 364: this.$ = yy.Node('LabeledStatement',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),$$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 365: this.$ = yy.Node('ThrowStatement', $$[$0-1], _$[$0-1], yy.loc([this._$,_$[$0]])); 
+case 365: this.$ = yy.Node('ThrowStatement', $$[$0-1], _$[$0-1], yy.loc([this._$,_$[$0]]));
 break;
-case 366: this.$ = yy.Node('ThrowStatement', $$[$0-1], _$[$0-1], yy.loc([this._$,_$[$0-1]])); 
+case 366: this.$ = yy.Node('ThrowStatement', $$[$0-1], _$[$0-1], yy.loc([this._$,_$[$0-1]]));
 break;
-case 367: this.$ = yy.Node('TryStatement', $$[$0-2], null, $$[$0], yy.loc([this._$,_$[$0]])); 
+case 367: this.$ = yy.Node('TryStatement', $$[$0-2], null, $$[$0], yy.loc([this._$,_$[$0]]));
 break;
 case 368: this.$ = yy.Node('TryStatement', $$[$0-5],
-                yy.Node('CatchClause',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),null, $$[$0], yy.loc([_$[$0-4],_$[$0]])), null, yy.loc([this._$,_$[$0]])); 
+                yy.Node('CatchClause',yy.Node('Identifier', $$[$0-2],yy.loc(_$[$0-2])),null, $$[$0], yy.loc([_$[$0-4],_$[$0]])), null, yy.loc([this._$,_$[$0]]));
 break;
 case 369: this.$ = yy.Node('TryStatement', $$[$0-7],
                 yy.Node('CatchClause',yy.Node('Identifier', $$[$0-4],yy.loc(_$[$0-4])),null, $$[$0-2], yy.loc([_$[$0-6],_$[$0-2]])),
-                $$[$0], yy.loc([this._$,_$[$0]])); 
+                $$[$0], yy.loc([this._$,_$[$0]]));
 break;
-case 370: this.$ = yy.Node('DebuggerStatement', yy.loc([this._$,_$[$0]])); 
+case 370: this.$ = yy.Node('DebuggerStatement', yy.loc([this._$,_$[$0]]));
 break;
-case 371: this.$ = yy.Node('DebuggerStatement', yy.loc(_$[$0-1])); 
+case 371: this.$ = yy.Node('DebuggerStatement', yy.loc(_$[$0-1]));
 break;
 case 372: this.$ = yy.Node('FunctionDeclaration',
                 yy.Node('Identifier', $$[$0-3],yy.loc(_$[$0-3])), [], $$[$0], false, false, yy.loc([this._$,_$[$0]]))
-      
+
 break;
 case 373: this.$ = yy.Node('FunctionDeclaration',
                 yy.Node('Identifier', $$[$0-4],yy.loc(_$[$0-4])),
                 $$[$0-2], $$[$0], false, false, yy.loc([this._$,_$[$0]]))
-      
+
 break;
-case 374: this.$ = yy.Node('FunctionExpression', null, [], $$[$0], false, false, yy.loc([this._$,_$[$0]])); 
+case 374: this.$ = yy.Node('FunctionExpression', null, [], $$[$0], false, false, yy.loc([this._$,_$[$0]]));
 break;
 case 375: this.$ = yy.Node('FunctionExpression', null,
-           $$[$0-2], $$[$0], false, false, yy.loc([this._$,_$[$0]])); 
+           $$[$0-2], $$[$0], false, false, yy.loc([this._$,_$[$0]]));
 break;
 case 376: this.$ = yy.Node('FunctionExpression',
                 yy.Node('Identifier', $$[$0-3],yy.loc(_$[$0-3])),
-                [], $$[$0], false, false, yy.loc([this._$,_$[$0]])); 
+                [], $$[$0], false, false, yy.loc([this._$,_$[$0]]));
 break;
 case 377: this.$ = yy.Node('FunctionExpression',
                 yy.Node('Identifier', $$[$0-4],yy.loc(_$[$0-4])),
-                $$[$0-2], $$[$0], false, false, yy.loc([this._$,_$[$0]])); 
+                $$[$0-2], $$[$0], false, false, yy.loc([this._$,_$[$0]]));
 break;
-case 378: this.$ = [yy.Node('Identifier', $$[$0])]; 
+case 378: this.$ = [yy.Node('Identifier', $$[$0])];
 break;
-case 379: this.$ = [$$[$0]]; 
+case 379: this.$ = [$$[$0]];
 break;
-case 380: this.$ = $$[$0-2]; this.$.push(yy.Node('Identifier', $$[$0],yy.loc(_$[$0]))); 
+case 380: this.$ = $$[$0-2]; this.$.push(yy.Node('Identifier', $$[$0],yy.loc(_$[$0])));
 break;
-case 381: this.$ = $$[$0-2]; this.$.push($$[$0]); 
+case 381: this.$ = $$[$0-2]; this.$.push($$[$0]);
 break;
-case 382: this.$ = []; 
+case 382: this.$ = [];
 break;
-case 384: return yy.Node('Program'); 
+case 384: return yy.Node('Program');
 break;
-case 385: return yy.Node('Program',$$[$0],yy.loc(_$[$0])); 
+case 385: return yy.Node('Program',$$[$0],yy.loc(_$[$0]));
 break;
-case 386: this.$ = [$$[$0]]; 
+case 386: this.$ = [$$[$0]];
 break;
 case 387: yy.locComb(this._$,_$[$0]);
-      this.$ = $$[$0-1];$$[$0-1].push($$[$0]); 
+      this.$ = $$[$0-1];$$[$0-1].push($$[$0]);
 break;
 }
 },
@@ -915,7 +915,7 @@ next:function () {
         if (this._input === "") {
             return this.EOF;
         } else {
-            this.parseError('Lexical error on line '+(this.yylineno+1)+'. Unrecognized text.\n'+this.showPosition(), 
+            this.parseError('Lexical error on line '+(this.yylineno+1)+'. Unrecognized text.\n'+this.showPosition(),
                     {text: "", token: null, line: this.yylineno});
         }
     },
@@ -944,7 +944,7 @@ case 0:return 177
 break;
 case 1:return 177
 break;
-case 2: if(yy.ASI){ yy.ASI=false; return 177;} else yy.lineBreak = true; 
+case 2: if(yy.ASI){ yy.ASI=false; return 177;} else yy.lineBreak = true;
 break;
 case 3:yy.ASI=false; /* skip whitespace */
 break;
@@ -990,9 +990,9 @@ case 12:
   };
 
 break;
-case 13: return 4 
+case 13: return 4
 break;
-case 14: return 5 
+case 14: return 5
 break;
 case 15:return 8
 break;
@@ -1607,4 +1607,4 @@ Jison.parse = function (src, options) {
 };
 
 
-})(typeof window != 'undefined' ? window : module.exports);
+})(typeof exports === 'object' ? exports : window); // pz: modified this line for gonzales

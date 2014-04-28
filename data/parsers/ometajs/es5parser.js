@@ -316,4 +316,4 @@ var ES5Parser=objectThatDelegatesTo(OMeta,{"SourceCharacter":function(){var $elf
 
 exports.ES5Parser = ES5Parser;
 
-})(typeof window != 'undefined' ? window : module.exports);
+})(typeof exports === 'object' ? exports : window); // pz: modified this line for gonzales
