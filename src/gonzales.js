@@ -3,6 +3,19 @@
 var Gonzales = exports.Gonzales = {
   parsers: [],
   sources: [],
+  stats: {},
+
+  sourcesToLoad: [],
+  parsersToLoad: [],
+  sourcesLoaded: false,
+  parsersLoaded: false,
+
+  profile: false,
+  testQueue: [],
+  benchCount: 10,
+  keepGoing: false,
+  lastTd: null,
+  allowWarmup: false,
 
   init: function(parsers, sources){
     Gonzales.createSourceTds();
@@ -13,6 +26,7 @@ var Gonzales = exports.Gonzales = {
       allSourceToggle = !allSourceToggle;
       Array.prototype.slice.call(document.querySelectorAll('.check-source'),0).forEach(function(e){
         e.checked = allSourceToggle;
+        Gonzales.toggleRow(e);
       });
     };
   },
@@ -20,20 +34,22 @@ var Gonzales = exports.Gonzales = {
     Gonzales.sources.forEach(Gonzales.createSourceTd);
   },
   createSourceTd: function(source){
-    // var e = <tr><td><input type="checkbox"/></td><td>{source.name}</td></tr>
-    // if (source.defaultUsed) e{input}.checked = true; // ugly :(
-    // ${.sources}.appendChild(e);
+    var tr = document.createElement('tr');
+    tr.className = source.defaultUsed ? 'on' : 'off';
+    source.tr = tr;
 
-    var e = document.createElement('tr');
-    var f = document.createElement('td');
-    f.innerHTML = '<input type="checkbox"'+(source.defaultUsed?' checked':'')+' class="check-source"/>';
-    e.appendChild(f);
-    var f = document.createElement('td');
-    f.innerHTML = source.name+'<br/>';
-    e.appendChild(f);
-    var tbody = document.querySelector('.sources');
-    tbody.appendChild(e);
-    source.tr = e;
+    var tdInput = document.createElement('td');
+    tdInput.innerHTML = '<input type="checkbox"'+(source.defaultUsed?' checked':'')+' class="check-source"/>';
+
+    var input = tdInput.firstElementChild;
+    input.onclick = function(e){ Gonzales.toggleRow(e.target); };
+    tr.appendChild(tdInput);
+
+    var tdName = document.createElement('td');
+    tdName.innerHTML = source.name+'<br/>';
+    tr.appendChild(tdName);
+
+    document.querySelector('.sources').appendChild(tr);
   },
   createParserTds: function(){
     Gonzales.parsers.forEach(Gonzales.createParserTd);
@@ -50,6 +66,7 @@ var Gonzales = exports.Gonzales = {
     // var e = <td/>;
 
     var e = document.createElement('td');
+    e.className = parser.defaultOn ? 'on' : 'off';
     source.tr.appendChild(e);
     parser.tds[source.name] = e;
   },
@@ -61,6 +78,14 @@ var Gonzales = exports.Gonzales = {
       '<a href="'+parser.link+'" target="_blank">link</a><br/>'+
       '<input type="checkbox" '+(parser.defaultOn?'checked':'')+'/>';
     e.title = 'By '+parser.author;
+    e.querySelector('input').onclick = function(e){
+      var value = e.target.checked ? 'on' : 'off';
+      var tds = parser.tds;
+
+      for (var key in tds) {
+        tds[key].className = value;
+      }
+    };
     document.querySelector('.row-runner').appendChild(e);
     parser.tds.head = e;
   },
@@ -81,15 +106,27 @@ var Gonzales = exports.Gonzales = {
     xhr.send(null);
   },
 
-  sourcesToLoad: [],
-  parsersToLoad: [],
-  profile: false,
-  testQueue: [],
-  run: function(profile){
+  toggleRow: function(e){
+    var p = e.parentNode.parentNode;
+    p.className = e.checked ? 'on' : 'off';
+  },
+
+  /**
+   * Run the benchmark
+   *
+   * @param {boolean} [profile=false] Call console.profile() and console.profileEnd()
+   * @param {number} [count=10] Number of runs per parser
+   */
+  run: function(profile, count, keepGoing, allowWarmup){
     Gonzales.profile = profile === true;
     Gonzales.sourcesToLoad = [];
     Gonzales.parsersToLoad = [];
     Gonzales.testQueue = [];
+    Gonzales.benchCount = count || 10;
+    Gonzales.keepGoing = keepGoing;
+    Gonzales.sourcesLoaded = false;
+    Gonzales.parsersLoaded = false;
+    Gonzales.allowWarmup = allowWarmup;
 
     Gonzales.gatherTests(Gonzales.bench);
 
@@ -98,8 +135,7 @@ var Gonzales = exports.Gonzales = {
     }
 
     Gonzales.nextSource();
-
-    Gonzales.nextParser();
+    Gonzales.nextParser(false);
   },
   gatherTests: function(bench, options){
     options = options || {};
@@ -150,8 +186,10 @@ var Gonzales = exports.Gonzales = {
     if (!Gonzales.testQueue.length) console.log("No tests selected or no order selected");
   },
   nextSource: function again(){
-    if (Gonzales.sourcesToLoad.length == 0) Gonzales.finishedLoading();
-    else {
+    if (Gonzales.sourcesToLoad.length == 0) {
+      Gonzales.sourcesLoaded = true;
+      Gonzales.finishedLoading();
+    } else {
       var source = Gonzales.sourcesToLoad.pop();
       Gonzales.GET(source.url, function(err, str){
         if (err) {
@@ -165,12 +203,15 @@ var Gonzales = exports.Gonzales = {
     }
   },
   nextParser: function again(files){
-    if (Gonzales.parsersToLoad.length == 0) Gonzales.finishedLoading();
-    else {
+    if (Gonzales.parsersToLoad.length == 0) {
+      Gonzales.parsersLoaded = true;
+      Gonzales.finishedLoading();
+    } else {
       // queue is false if first call or last call was last for one parser
       if (!files) {
-        var source = Gonzales.parsersToLoad[Gonzales.parsersToLoad.length-1];
-        files = source.files.slice(0);
+        var next = Gonzales.parsersToLoad[Gonzales.parsersToLoad.length-1];
+        files = next.files.slice(0);
+        next.exports = window.exports = {_exportsFor:next.name};
       }
       var url = files.shift();
       Gonzales.GET(url, function(err, str){
@@ -192,8 +233,8 @@ var Gonzales = exports.Gonzales = {
       });
     }
   },
-  finishedLoading: function(toLoad){
-    if (Gonzales.sourcesToLoad.length || Gonzales.parsersToLoad.length) return; // not yet finished loading
+  finishedLoading: function(){
+    if (!Gonzales.sourcesLoaded || !Gonzales.parsersLoaded) return; // not yet finished loading
 
     document.getElementById('total').innerHTML = '/ '+Gonzales.testQueue.length;
 
@@ -201,14 +242,14 @@ var Gonzales = exports.Gonzales = {
 
     Gonzales.drainQueue();
   },
-  drainQueue: function again(){
+  drainQueue: function again(benchCount){
     document.getElementById('progress').innerHTML = Gonzales.testQueue.length;
     if (Gonzales.testQueue.length) {
       var f = Gonzales.testQueue.shift();
-//            var f = Gonzales.testQueue.splice(Math.floor(Math.random()*Gonzales.testQueue.length), 1)[0];
+      if (Gonzales.keepGoing) Gonzales.testQueue.push(f);
       setTimeout(function(){
         f();
-        again();
+        again(benchCount);
       }, 100);
     } else {
       document.getElementById('progress').innerHTML = 'done';
@@ -219,14 +260,23 @@ var Gonzales = exports.Gonzales = {
     }
   },
   bench: function(parser, source){
-    // so we have the benchmark in benchmarkFile and `parser` has a function to use the parser...
-    var parse = parser.getParser(window);
-    var total = 0;
-    var min = Infinity;
-    var max = -Infinity;
+    var parse = parser.getParser(parser.exports, window);
+
+    var key = parser.name + ' > ' + source.name;
+    if (!Gonzales.stats[key]) Gonzales.stats[key] = {count:0};
+    var stats = Gonzales.stats[key];
+
+    parser.min = Infinity;
+    parser.max = -Infinity;
+    parser.results = [];
+
+    var total = stats.total || 0;
+    var min = stats.min || Infinity;
+    var max = stats.max || -Infinity;
     var failed = false;
-    // we'll repeat this step 10x, no pause
-    for (var i=0; i<10 && !failed; ++i) {
+
+    // we'll repeat this step x times, no pause
+    for (var i = 0, count = Gonzales.benchCount; i<count && !failed; ++i) {
       try {
         var start = Date.now();
         parse(source.loaded);
@@ -237,8 +287,17 @@ var Gonzales = exports.Gonzales = {
         max = Math.max(max, time);
       } catch (e) {
         failed = true;
-        console.error(parser.name+' crashed:', e);
+        console.error(parser.name+' crashed:', e.toString());
       }
+    }
+
+    if (Gonzales.allowWarmup && !stats.warmedUp) {
+      stats.warmedUp = true;
+    } else {
+      stats.min = min;
+      stats.max = max;
+      stats.total = total;
+      stats.count += Gonzales.benchCount;
     }
 
     var td = parser.tds[source.name];
@@ -246,11 +305,22 @@ var Gonzales = exports.Gonzales = {
       td.innerHTML = 'crash';
       td.style.backgroundColor = 'orange';
     } else {
-      td.innerHTML = (total/10)+'ms<br/>'+min+' ~ '+max;
-      td.style.backgroundColor = 'transparent';
+      var a = (total/stats.count) + '';
+      if (a.indexOf('.') >= 0) a = a.slice(0, a.indexOf('.')+3);
+      td.innerHTML = a+'ms<br/>'+min+' ~ '+max+' ('+stats.count+'x)';
+
+      if (Gonzales.keepGoing) {
+        if (Gonzales.allowWarmup && !stats.count) {
+          td.innerHTML = 'warmup<br>('+min+' ~ '+max+')';
+        }
+        if (Gonzales.lastTd) Gonzales.lastTd.removeAttribute('style');
+        Gonzales.lastTd = td;
+        td.style.backgroundColor = 'yellow';
+      } else {
+        td.removeAttribute('style');
+      }
     }
   },
-
 
   // node stuff
 
@@ -276,7 +346,7 @@ var Gonzales = exports.Gonzales = {
           s += fs.readFileSync(__dirname+'/'+file);
         });
 
-        s += ';\n\nmodule.exports = {Par:Par};';
+        if (parser.name === 'ZeParser2') s += ';\n\nmodule.exports = {Par:Par};';
         fs.writeFileSync(__dirname+'/../build/'+parser.name+'.js', s);
 
         parser.loaded = require(__dirname+'/../build/'+parser.name+'.js');
@@ -292,20 +362,21 @@ var Gonzales = exports.Gonzales = {
         again();
       }, 100);
     } else {
-      console.log('Done!');
+      console.log('\nDone!');
     }
   },
   nodeBench: function(parser, source){
-    console.log("Running "+parser.name+'('+source.name+')...');
+    console.log("Running "+parser.name+' => ('+source.name+') ...');
     // so we have the benchmark in benchmarkFile and `parser` has a function to use the parser...
 
-    var parse = parser.getParser(parser.loaded);
+    var parse = parser.getParser(parser.loaded, parser.loaded);
     var total = 0;
-    var min = Infinity;
-    var max = -Infinity;
+    var min = parser.min || Infinity;
+    var max = parser.max || -Infinity;
     var failed = false;
-    // we'll repeat this step 10x, no pause
-    for (var i=0; i<10 && !failed; ++i) {
+
+    // we'll repeat this step n times, no pause
+    for (var i=0; i<Gonzales.benchCount && !failed; ++i) {
       try {
         var start = Date.now();
         parse(source.loaded);
@@ -320,6 +391,10 @@ var Gonzales = exports.Gonzales = {
         console.log(e.message);
       }
     }
+
+    parser.min = min;
+    parser.max = max;
+    parser.count += Gonzales.benchCount;
 
     if (!failed) {
       console.log(((total-(min+max))/8)+'ms: '+min+' ~ '+max);
