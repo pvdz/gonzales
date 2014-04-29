@@ -17,16 +17,25 @@ var Gonzales = exports.Gonzales = {
   lastTd: null,
   allowWarmup: false,
 
+  stop: true,
+
   init: function(parsers, sources){
     Gonzales.createSourceTds();
     Gonzales.createParserTds();
 
     var allSourceToggle = false;
+    var allParserToggle = false;
     document.getElementById('top-left').onclick = function(){
       allSourceToggle = !allSourceToggle;
       Array.prototype.slice.call(document.querySelectorAll('.check-source'),0).forEach(function(e){
         e.checked = allSourceToggle;
         Gonzales.toggleRow(e);
+      });
+    };
+    document.getElementById('top-left-right').onclick = function(){
+      allParserToggle = !allParserToggle;
+      Array.prototype.slice.call(document.querySelectorAll('.row-runner>th>input'),0).forEach(function(e){
+        if (e.checked === allParserToggle) e.click({target:e});
       });
     };
   },
@@ -118,6 +127,7 @@ var Gonzales = exports.Gonzales = {
    * @param {number} [count=10] Number of runs per parser
    */
   run: function(profile, count, keepGoing, allowWarmup){
+    Gonzales.stop = false;
     Gonzales.profile = profile === true;
     Gonzales.sourcesToLoad = [];
     Gonzales.parsersToLoad = [];
@@ -127,8 +137,9 @@ var Gonzales = exports.Gonzales = {
     Gonzales.sourcesLoaded = false;
     Gonzales.parsersLoaded = false;
     Gonzales.allowWarmup = allowWarmup;
-
+    Gonzales.lastTd = null;
     Gonzales.gatherTests(Gonzales.bench);
+    Gonzales.stats = {};
 
     if (Gonzales.testQueue.length == 0) {
         return console.log("Either no sources or no parsers selected, or neither.");
@@ -243,6 +254,7 @@ var Gonzales = exports.Gonzales = {
     Gonzales.drainQueue();
   },
   drainQueue: function again(benchCount){
+    if (Gonzales.stop) return;
     document.getElementById('progress').innerHTML = Gonzales.testQueue.length;
     if (Gonzales.testQueue.length) {
       var f = Gonzales.testQueue.shift();
@@ -276,7 +288,7 @@ var Gonzales = exports.Gonzales = {
     var failed = false;
 
     // we'll repeat this step x times, no pause
-    for (var i = 0, count = Gonzales.benchCount; i<count && !failed; ++i) {
+    for (var i = 0, count = Gonzales.benchCount && !Gonzales.stop; i<count && !failed; ++i) {
       try {
         var start = Date.now();
         parse(source.loaded);
@@ -315,7 +327,7 @@ var Gonzales = exports.Gonzales = {
         }
         if (Gonzales.lastTd) Gonzales.lastTd.removeAttribute('style');
         Gonzales.lastTd = td;
-        td.style.backgroundColor = 'yellow';
+        if (!Gonzales.stop) td.style.backgroundColor = 'yellow';
       } else {
         td.removeAttribute('style');
       }
