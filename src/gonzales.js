@@ -288,7 +288,7 @@ var Gonzales = exports.Gonzales = {
     var failed = false;
 
     // we'll repeat this step x times, no pause
-    for (var i = 0, count = Gonzales.benchCount && !Gonzales.stop; i<count && !failed; ++i) {
+    for (var i = 0, count = Gonzales.benchCount; i<count && !failed && !Gonzales.stop; ++i) {
       try {
         var start = Date.now();
         parse(source.loaded);
@@ -309,7 +309,7 @@ var Gonzales = exports.Gonzales = {
       stats.min = min;
       stats.max = max;
       stats.total = total;
-      stats.count += Gonzales.benchCount;
+      stats.count += i;
     }
 
     var td = parser.tds[source.name];
@@ -406,7 +406,7 @@ var Gonzales = exports.Gonzales = {
 
     parser.min = min;
     parser.max = max;
-    parser.count += Gonzales.benchCount;
+    parser.count += i;
 
     if (!failed) {
       console.log(((total-(min+max))/8)+'ms: '+min+' ~ '+max);
