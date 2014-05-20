@@ -80,23 +80,29 @@ var Gonzales = exports.Gonzales = {
     parser.tds[source.name] = e;
   },
   createParserTh: function(parser){
-    var e = document.createElement('th');
-    e.innerHTML =
+    var th = document.createElement('th');
+    th.setAttribute('data-path', parser.files[0])
+    th.innerHTML =
       parser.name+'<br/>' +
       (parser.optimized?'<small><i>optimized</i></small><br/>':'')+
       '<a href="'+parser.link+'" target="_blank">link</a><br/>'+
       '<input type="checkbox" '+(parser.defaultOn?'checked':'')+'/>';
-    e.title = 'By '+parser.author;
-    e.querySelector('input').onclick = function(e){
-      var value = e.target.checked ? 'on' : 'off';
+    th.title = 'By '+parser.author;
+    th.onclick = function(e){
+      if (e.target.tagName === 'A') return;
+
+      var input = th.querySelector('input');
+      if (e.target !== input) input.checked = !input.checked;
+
+      var value = input.checked ? 'on' : 'off';
       var tds = parser.tds;
 
       for (var key in tds) {
         tds[key].className = value;
       }
     };
-    document.querySelector('.row-runner').appendChild(e);
-    parser.tds.head = e;
+    document.querySelector('.row-runner').appendChild(th);
+    parser.tds.head = th;
   },
   GET: function(url, callback){
     var xhr = new XMLHttpRequest();

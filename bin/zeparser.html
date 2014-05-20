@@ -73,6 +73,96 @@
     document.getElementById('stop').onclick = function(){
       Gonzales.stop = true;
     };
+
+    (function(){
+      var ptr = document.querySelector('table').querySelector('tr')
+      var tr = document.createElement('tr');
+      ptr.parentNode.insertBefore(tr, ptr.nextElementSibling);
+
+      var td = document.createElement('td');
+      td.style.textAlign = 'center';
+      td.setAttribute('colspan', '2');
+      td.innerHTML =
+        '<form style="display:inline;" method="POST" action="http://www.textdiff.com/" target="_blank">'+
+          '<input class="diffA" type="hidden" name="string1">'+
+          '<input class="diffB" type="hidden" name="string2">'+
+          '<input type="submit" value="diff (1)">'+
+        '</form>'+
+        '<form style="display:inline;" method="POST" action="http://www.diffchecker.com/diff" target="_blank">'+
+          '<input class="diffA" type="hidden" name="file1">'+
+          '<input class="diffB" type="hidden" name="file2">'+
+          '<input type="hidden" name="storage-options" value="no">'+
+          '<input type="submit" value="diff (2)">'+
+        '</form>'+
+        '<form style="display:inline;" method="POST" action="http://text-compare.com/" target="_blank">'+
+          '<input class="diffA" type="hidden" name="text1">'+
+          '<input class="diffB" type="hidden" name="text2">'+
+          '<input type="submit" value="diff (3)">'+
+        '</form>'+
+        '<form style="display:inline;" method="POST" action="http://i-tools.org/diff/exec" target="_blank">'+
+          '<input class="diffA" type="hidden" name="first[direct]">'+
+          '<input class="diffB" type="hidden" name="second[direct]">'+
+          '<input type="submit" value="diff (4)">'+
+        '</form>';
+
+      td.onclick = function(e){
+        if (e.target.nodeName !== 'INPUT') return;
+
+        function GET(url, callback){
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4) {
+              if (xhr.status == 200) callback(null, xhr.responseText);
+              else console.error("File request problem (code: "+xhr.status+")!");
+            }
+          };
+          xhr.open("GET", url+'?'+Math.random());
+          xhr.send(null);
+        }
+        var strings = [];
+        function onload(_, s) {
+          strings.push(s);
+          if (strings.length === 2) {
+            e.target.parentNode.querySelector('.diffA').value = strings[0];
+            e.target.parentNode.querySelector('.diffB').value = strings[1];
+            e.target.parentNode.submit();
+          }
+        }
+
+        var inputs = document.querySelectorAll('input.fordiff:checked');
+        if (inputs.length > 1) {
+          var pathA = inputs[0].getAttribute('data-path');
+          var pathB = inputs[1].getAttribute('data-path');
+          if (pathA && pathB) {
+            // ajax them, send them in post
+
+
+            GET(pathA+'par.js', onload);
+            GET(pathB+'par.js', onload);
+          }
+        }
+
+        return false;
+      };
+
+      tr.appendChild(td);
+      td = document.createElement('td');
+      td.setAttribute('colspan', '2');
+      tr.appendChild(td);
+
+      for (var i=0; i<ptr.children.length-3; ++i) {
+        var pth = ptr.children[i+3];
+        td = document.createElement('td');
+
+        var path = pth.getAttribute('data-path').replace('build.js', '');
+
+        td.style.textAlign = 'center';
+        td.innerHTML = '<form><input class="fordiff" type="checkbox"'+(i>=2&&i<4?' checked':'')+' data-path="'+path+'"></form>';
+        tr.appendChild(td);
+      }
+    })();
+
+
   </script>
 </body>
 </html>
