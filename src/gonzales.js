@@ -81,7 +81,8 @@ var Gonzales = exports.Gonzales = {
   },
   createParserTh: function(parser){
     var th = document.createElement('th');
-    th.setAttribute('data-path', parser.files[0])
+    th.setAttribute('data-path', parser.files[0]);
+    th.setAttribute('data-title', parser.name);
     th.innerHTML =
       parser.name+'<br/>' +
       (parser.optimized?'<small><i>optimized</i></small><br/>':'')+

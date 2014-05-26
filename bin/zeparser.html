@@ -81,38 +81,60 @@
 
       var td = document.createElement('td');
       td.style.textAlign = 'center';
-      td.setAttribute('colspan', '2');
-      td.innerHTML =
+      td.setAttribute('colspan', '4');
+      td.innerHTML = 'popup diff: '+
         '<form style="display:inline;" method="POST" action="http://www.textdiff.com/" target="_blank">'+
           '<input class="diffA" type="hidden" name="string1">'+
           '<input class="diffB" type="hidden" name="string2">'+
-          '<input type="submit" value="diff (1)">'+
+          '<input type="submit" value="(1)">'+
         '</form>'+
         '<form style="display:inline;" method="POST" action="http://www.diffchecker.com/diff" target="_blank">'+
           '<input class="diffA" type="hidden" name="file1">'+
           '<input class="diffB" type="hidden" name="file2">'+
           '<input type="hidden" name="storage-options" value="no">'+
-          '<input type="submit" value="diff (2)">'+
+          '<input type="submit" value="(2)">'+
         '</form>'+
         '<form style="display:inline;" method="POST" action="http://text-compare.com/" target="_blank">'+
           '<input class="diffA" type="hidden" name="text1">'+
           '<input class="diffB" type="hidden" name="text2">'+
-          '<input type="submit" value="diff (3)">'+
+          '<input type="submit" value="(3)">'+
         '</form>'+
         '<form style="display:inline;" method="POST" action="http://i-tools.org/diff/exec" target="_blank">'+
           '<input class="diffA" type="hidden" name="first[direct]">'+
           '<input class="diffB" type="hidden" name="second[direct]">'+
-          '<input type="submit" value="diff (4)">'+
-        '</form>';
+          '<input type="submit" value="(4)">'+
+        '</form>'+
+        '<form style="display:inline;" method="POST" action="http://www.diff-text.com/big-diff-text-combined-navigation.aspx" target="_blank">'+
+          '<input class="diffA" type="hidden" name="TextBox1">'+
+          '<input class="diffB" type="hidden" name="TextBox2">'+
+          '<input type="hidden" name="ShowWhatRadioButtonList" value="ShowOnlyNearDifferences">'+
+          '<input type="hidden" name="CompareLevelRadioButtonList" value="CompareWords">'+
+          '<input type="hidden" name="CheckBoxUseStrikeThrough" value="no">'+
+          '<input type="hidden" name="CheckBoxUseUnderline" value="no">'+
+          '<input type="hidden" name="CheckBoxLookForMoves" value="no">'+
+          '<input type="hidden" name="CheckBoxLineNumbering" value="no">'+
+          '<input type="hidden" name="CheckBoxNoOutputSpacing" value="no">'+
+          '<input type="hidden" name="DDLMoveMinimum" value="5">'+
+          '<input type="hidden" name="DDLContextLines" value="4">'+
+
+          '<input type="hidden" name="__VIEWSTATE" value="/wEPDwUJMzE5OTI1MDQxDxYCHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgFkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYGBRdDaGVja0JveENhc2VJbnNlbnNpdGl2ZQUYQ2hlY2tCb3hVc2VTdHJpa2VUaHJvdWdoBRRDaGVja0JveFVzZVVuZGVybGluZQUUQ2hlY2tCb3hMb29rRm9yTW92ZXMFFUNoZWNrQm94TGluZU51bWJlcmluZwUXQ2hlY2tCb3hOb091dHB1dFNwYWNpbmeLqNWWOZP8MLEu3x+4AQO7FZqMeNfa7iONwKv5S2QrFw==">'+
+          '<input type="hidden" name="__EVENTVALIDATION" value="/wEdADKVyphIxtAALx6m0JMluh+rESCFkFW/RuhzY1oLb/NUVB2nXP6dhZn6mKtmTGNHd3P2qKnVxIZR18EJ5dX9RZ4Hzo0zTaKMIZ5Hi01Hv53cf2VWsrDYmscm0qfz66/s+o2vfGTASMzgegcb0a0hNCbSpHhhonyTZHujC7Qzktq8akbeiedZmAJm0cXPWC1DcKYDlu3t6cGvPARsXHnMvlDwaribJdY6CqDlWRU/dYVa9fJogD55JnO9RYktoNbu0Um+dze5Sz8BS2e1zk8RYTrkIThDsu3j1B8w8b82TDbsdD0Hl7nF9h2tjNtHzCRoZDnl6ZvL3mOfeXyWhDxz4OpW+6jyjTorjbvf0ksFM1O3+LbSPlU/3m0VQ40mCtGqjb9HKAY7TL3KdFrXp1aecRnnmGpUSWq3YPpNYlIfT5wvXUq4rPe9dXeI+zXrzkP0BxjJ/HYf5qDvl2G2kJVj1W7TE06GM8wjoJXwcGy9Fhd8MRO9QzFot/Y1/t+SYOKIKnMuJ8RXO9A2Z3iP0uOoW7xdcW/OOHjqIo2evoR5nd8g7D2P5p64BScsjZYIEC3Mx9R/1E5dvMhh1ixJVLZ7Fl4XU+19vL4iu22z0Bb1f6/6z3MNieZfxLUkdPkRA0up+uMOFvhfhG8tTxEQEjO8o5dGlrp33L7uVis2syfhx5d7OvrUu419RcHwlA9bbqgR0LKdktgoL1LdjvSMsvzOngV0K2JZjXM9x/gBoXQochD8/qqLPRc7KKjI6G/FrTS3qnsRDL5dcjxh0sjF2zMz8Jvyl1mI9/wit5v3icFOwqaEX307RWGxk1sj5g5YiBQfgEt7VrVTbSbSdgVOaiCXYqJ+I2Nnx4PNyo+mRlCkOSUFGTKqVC0GD8F8BMRc+deAkFBTi0VdF2b0ZH/YLvq3gsslO493KoMVQf/GJSORLjqedvLS5x7keKfbqZReyGyLg1otvzNHqaWnBdFISnL0HtLzMD9rM6WSKpKUVUOjOSvQxvxjW3WqUsanWs9IfKa++9eCmW0ep7q4Dg8bG7+4Zb2LQbxdeYUrmvM4ZTYL8WXj0yJY53ztrddVfTdJ1998E1f6Kh97s+d0MWUDnZFpWLPm">'+
+
+          '<input type="submit" value="(5)">'+
+        '</form> ' +
+        'file: '+
+        '<input type="radio" name="diffile" id="diffpar" checked> par.js ' +
+        '<input type="radio" name="diffile" id="difftok"> tok.js '+
+      '<input type="radio" name="diffile"> build.js ';
 
       td.onclick = function(e){
-        if (e.target.nodeName !== 'INPUT') return;
+        if (e.target.nodeName !== 'INPUT' || e.target.name === 'diffile') return;
 
-        function GET(url, callback){
+        function GET(url, title, callback, prio){
           var xhr = new XMLHttpRequest();
           xhr.onreadystatechange = function(){
             if (xhr.readyState == 4) {
-              if (xhr.status == 200) callback(null, xhr.responseText);
+              if (xhr.status == 200) callback(xhr.responseText, title, prio);
               else console.error("File request problem (code: "+xhr.status+")!");
             }
           };
@@ -120,11 +142,12 @@
           xhr.send(null);
         }
         var strings = [];
-        function onload(_, s) {
-          strings.push(s);
+        function onload(s, title, prio) {
+          strings[prio] = '// '+title+'\n\n'+s;
           if (strings.length === 2) {
-            e.target.parentNode.querySelector('.diffA').value = strings[0];
-            e.target.parentNode.querySelector('.diffB').value = strings[1];
+            // put the newest build in the right column
+            e.target.parentNode.querySelector('.diffB').value = strings[0];
+            e.target.parentNode.querySelector('.diffA').value = strings[1];
             e.target.parentNode.submit();
           }
         }
@@ -132,13 +155,15 @@
         var inputs = document.querySelectorAll('input.fordiff:checked');
         if (inputs.length > 1) {
           var pathA = inputs[0].getAttribute('data-path');
+          var titleA = inputs[0].getAttribute('data-title');
           var pathB = inputs[1].getAttribute('data-path');
+          var titleB = inputs[1].getAttribute('data-title');
           if (pathA && pathB) {
             // ajax them, send them in post
 
-
-            GET(pathA+'par.js', onload);
-            GET(pathB+'par.js', onload);
+            var file = document.querySelector('#diffpar').checked ? 'par.js' : document.querySelector('#difftok').checked ? 'tok.js' : 'build.js';
+            GET(pathA+file, titleA, onload, 0);
+            GET(pathB+file, titleB, onload, 1);
           }
         }
 
@@ -146,18 +171,16 @@
       };
 
       tr.appendChild(td);
-      td = document.createElement('td');
-      td.setAttribute('colspan', '2');
-      tr.appendChild(td);
 
       for (var i=0; i<ptr.children.length-3; ++i) {
         var pth = ptr.children[i+3];
         td = document.createElement('td');
 
         var path = pth.getAttribute('data-path').replace('build.js', '');
+        var title = pth.getAttribute('data-title');
 
         td.style.textAlign = 'center';
-        td.innerHTML = '<form><input class="fordiff" type="checkbox"'+(i>=2&&i<4?' checked':'')+' data-path="'+path+'"></form>';
+        td.innerHTML = '<form><input class="fordiff" type="checkbox"'+(i<2?' checked':'')+' data-path="'+path+'" data-title="'+title+'"></form>';
         tr.appendChild(td);
       }
     })();
